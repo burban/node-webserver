@@ -15,14 +15,14 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 // ============================
 let urlDB;
 
-// if (process.env.NODE_ENV === 'dev') {
-//     urlDB = 'mongodb://localhost:27017/cafe';
-// } else {
-// urlDB = process.env.MONGO_URI;
-//urlDB = 'strider:5d498f326c72ba4f846441ea@cluster0-cahod.mongodb.net/cafe';
-urlDB = 'mongodb+srv://strider:T684pF6RwbqFQ0TK@cluster0-cahod.mongodb.net/cafe?retryWrites=true&w=majority';
+if (process.env.NODE_ENV === 'dev') {
+    urlDB = 'mongodb://localhost:27017/cafe';
+} else {
+    //urlDB = process.env.MONGO_URI;
+    //urlDB = 'strider:5d498f326c72ba4f846441ea@cluster0-cahod.mongodb.net/cafe';
+    urlDB = 'mongodb+srv://strider:T684pF6RwbqFQ0TK@cluster0-cahod.mongodb.net/cafe?retryWrites=true&w=majority';
 
-//}
+}
 
 process.env.URLDB = urlDB;
 
