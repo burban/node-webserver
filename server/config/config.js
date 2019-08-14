@@ -11,6 +11,22 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 
 // ============================
+//  Vencimeinto del token
+// ============================
+// 60 segundos
+// 60 Minutos
+// 24 horas
+// 30 dias
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+
+// ============================
+//  SEED de autentificacion
+// ============================
+process.env.SEED = process.env.SEED || 'secret';
+
+
+// ============================
 //  Base de datos
 // ============================
 let urlDB;
@@ -23,5 +39,3 @@ if (process.env.NODE_ENV === 'dev') {
 }
 
 process.env.URLDB = urlDB;
-
-//mongodb + srv: //strider:5d498f326c72ba4f846441ea@cluster0-cahod.mongodb.net/cafe
