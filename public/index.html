@@ -6,17 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Google Sign-in Node</title>
-
     <meta name="google-signin-client_id" content="1094447084511-3cfb0u2rojre92f7d14kv7jv4nqict53.apps.googleusercontent.com">
-
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </head>
 
 <body>
-
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
 
     <script>
         function onSignIn(googleUser) {
@@ -28,15 +24,16 @@
 
             var id_token = googleUser.getAuthResponse().id_token;
 
+            console.log(id_token);
+
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/google');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
                 console.log('Signed in as: ' + xhr.responseText);
             };
+
             xhr.send('idtoken=' + id_token);
-
-
         }
     </script>
 
